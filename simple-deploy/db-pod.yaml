@@ -7,12 +7,12 @@ metadata:
 spec:
     containers:
         - name: mysql-container
-          image: mariadb:latest
+          image: mysql:8.0
           ports:
             - containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: cloudblitz
+              value: redhat
             - name: MYSQL_DATABASE
               value: student_db
 ---
