@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Pull') {
+            steps {
+                git branch: 'devops', url: 'https://github.com/ketankakde/EasyCRUD.git'
+            }
+        }
+
+        stage('EKS-Deploy') {
+            steps {
+                sh 'kubectl apply -f simple-deploy/.'
+            }   
+         }      
+     }
+}
